@@ -1,6 +1,6 @@
 <template>
   <div class="col-1 mx3">
-    <!-- <img class="img-fluid" :src="detailsMovie.backdrop_path" alt=""> -->
+    <img class="img-fluid" :src="`http://image.tmdb.org/t/p/w500/${detailsMovie.poster_path}`" alt="">
     <h5>Film</h5>
     <div class="pb-1"><strong>Titolo: </strong>{{detailsMovie.title}}</div>
     <div class="pb-1"><strong>Titolo originale: </strong>{{detailsMovie.original_title}}</div>
