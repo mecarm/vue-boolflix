@@ -3,7 +3,8 @@
     <!-- <img class="img-fluid" :src="detailsMovie.backdrop_path" alt=""> -->
     <div class="pb-1"><strong>Titolo: </strong>{{detailsMovie.title}}</div>
     <div class="pb-1"><strong>Titolo originale: </strong>{{detailsMovie.original_title}}</div>
-    <div><strong>Voto: </strong>{{detailsMovie.vote_average}}</div>
+    <div class="pb-1"><strong>Voto: </strong>{{detailsMovie.vote_average}}</div>
+    <div><strong>Lingua Originale: </strong>{{flagFunction()}}</div>
   </div>
 </template>
 
@@ -12,6 +13,24 @@ export default {
     name: 'MoviesList',
     props:{
         detailsMovie: Object
+    },
+    data(){
+        return{
+            flag: ''
+        }
+    },
+    methods: {
+        flagFunction(){
+            if ( this.detailsMovie.original_language == 'it' ){
+                return this.flag = '🇮🇹'
+            }
+            else if( this.detailsMovie.original_language == 'en' ){
+                return this.flag = '🇬🇧'
+            }
+            else{
+                return this.flag = this.detailsMovie.original_language
+            }
+        }
     }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <main class="row pt-5 overflow-auto">
+  <main class="row overflow-auto p-5">
     <MoviesList  v-for="(element, index) in moviesUtente" :key="index" :detailsMovie="element"/>
   </main>
 </template>
