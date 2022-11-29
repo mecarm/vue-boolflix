@@ -19,5 +19,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+  header{
+    height: 5%;
+  }
 </style>
