@@ -42,7 +42,7 @@ export default {
           this.inputUtente[1].series.push(response.data.results) 
 
         })
-      
+     
     },
   }
 }
