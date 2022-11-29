@@ -1,6 +1,7 @@
 <template>
   <div class="col-1 mx3">
     <!-- <img class="img-fluid" :src="detailsMovie.backdrop_path" alt=""> -->
+    <h5>Film</h5>
     <div class="pb-1"><strong>Titolo: </strong>{{detailsMovie.title}}</div>
     <div class="pb-1"><strong>Titolo originale: </strong>{{detailsMovie.original_title}}</div>
     <div class="pb-1"><strong>Voto: </strong>{{detailsMovie.vote_average}}</div>

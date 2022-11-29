@@ -1,8 +1,12 @@
 <template>
-  <header class="d-flex justify-content-end">
-    <div class="input-group w-25 py-3 pe-3">
-      <input type="text" class="form-control" v-model="inputUtente" placeholder="Cerca un film" aria-describedby="button-addon2">
-      <button @click="$emit('emitSearch', inputUtente)" class="btn btn-danger" type="button" id="button-addon2">Button</button>
+  <header>
+    <div class="d-flex justify-content-between p-3 align-items-center">
+      <h1 class="text-danger">NETFLIX</h1>
+      <div class="input-group w-auto p-3">
+        <input @keyup.enter="$emit('emitSearch', inputUtente)" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+          aria-describedby="button-addon2" v-model="inputUtente">
+        <button @click="$emit('emitSearch', inputUtente)" class="btn btn-danger" type="button" id="button-addon2">Cerca</button>
+      </div>
     </div>
   </header>
 </template>
@@ -20,6 +24,6 @@ export default {
 
 <style scoped lang="scss">
   header{
-    height: 7%;
+    height: 10%;
   }
 </style>
