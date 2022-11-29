@@ -1,5 +1,5 @@
 <template>
-    <div class="col-1 mx3">
+    <div class="col-2 mx3">
       <img class="img-fluid" :src="`http://image.tmdb.org/t/p/w500/${detailsSeries.poster_path}`" alt="">
       <h5>SERIE</h5>
       <div class="pb-1"><strong>Titolo: </strong>{{detailsSeries.name}}</div>
