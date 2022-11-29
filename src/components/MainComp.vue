@@ -16,7 +16,7 @@ export default {
         SeriesList
     },
     props: {
-        moviesUtente: Object
+        moviesUtente: Array
     }
 }
 </script>
