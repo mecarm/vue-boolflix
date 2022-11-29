@@ -20,6 +20,6 @@ export default {
 
 <style lang="scss" scoped>
     main{
-        height: 95%;
+        height: 93%;
     }
 </style>
