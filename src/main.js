@@ -11,12 +11,12 @@ import 'bootstrap/dist/js/bootstrap.min.js'
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
   /* import specific icons */
-  import { faUserSecret, faStar } from '@fortawesome/free-solid-svg-icons'
+  import { faUserSecret, faStar, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
   /*Import icone regular */
   // import { faFaceSmile } from '@fortawesome/free-regular-svg-icons'
 
   /* add icons to the library */
-  library.add(faUserSecret, faStar)
+  library.add(faUserSecret, faStar, faMagnifyingGlass)
 
   /* add font awesome icon component */
   Vue.component('font-awesome-icon', FontAwesomeIcon)

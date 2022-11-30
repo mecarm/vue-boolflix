@@ -1,5 +1,5 @@
 <template>
-    <div class="col-2  my-3">
+    <div class="col-2 my-3">
         <img class="img-fluid" :src="`http://image.tmdb.org/t/p/w500/${detailsMovie.poster_path}`" alt="">
         <div class="d-none">
             <h5>Film</h5>
@@ -79,7 +79,7 @@ div {
 
         .d-none {
             display: block !important;
-            padding: 20px;
+            padding: 10px;
 
             .trama {
                 max-height: 100px;
