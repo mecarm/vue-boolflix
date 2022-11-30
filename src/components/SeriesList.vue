@@ -1,5 +1,5 @@
 <template>
-    <div class="col-2 my-3">
+    <div class="col-md-2 col-sm-6 my-3">
         <img class="img-fluid" :src="`http://image.tmdb.org/t/p/w500/${detailsSeries.poster_path}`" alt="">
         <div class="d-none">
             <h5>SERIE</h5>
@@ -68,7 +68,7 @@ div {
     color: lightgrey;
 }
 
-.col-2 {
+.col-md-2, .col-sm-6 {
 
     &:hover {
         border: 1px solid rgba(211, 211, 211, 0.187);
