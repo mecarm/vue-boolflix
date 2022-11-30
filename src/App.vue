@@ -64,6 +64,6 @@ export default {
 }
 html{
   background-color: #141414;
-
+  overflow: hidden;
 }
 </style>

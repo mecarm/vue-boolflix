@@ -4,7 +4,14 @@
       <h5>SERIE</h5>
       <div class="pb-1"><strong>Titolo: </strong>{{detailsSeries.name}}</div>
       <div class="pb-1"><strong>Titolo originale: </strong>{{detailsSeries.original_name}}</div>
-      <div class="pb-1"><strong>Voto: </strong>{{detailsSeries.vote_average}}</div>
+      <div class="pb-1">
+        <strong>Voto: </strong>
+        <font-awesome-icon icon="fa-solid fa-star" class="star" v-if="(detailsSeries.vote_average / 2 > 0 || detailsSeries.vote_average == '')"/>
+        <font-awesome-icon icon="fa-solid fa-star" class="star" v-if="(detailsSeries.vote_average / 2 > 1)"/>
+        <font-awesome-icon icon="fa-solid fa-star" class="star" v-if="(detailsSeries.vote_average / 2 > 2)"/>
+        <font-awesome-icon icon="fa-solid fa-star" class="star" v-if="(detailsSeries.vote_average / 2 > 3)"/>
+        <font-awesome-icon icon="fa-solid fa-star" class="star" v-if="(detailsSeries.vote_average / 2 > 4)"/>
+    </div>
       <div><strong>Lingua Originale: </strong>{{flagFunction()}}</div>
     </div>
   </template>
@@ -41,5 +48,8 @@
           color: white;
           text-align: start;
           font-size: 0.8rem;
+      }
+      .star{
+        color: yellow;
       }
   </style>
