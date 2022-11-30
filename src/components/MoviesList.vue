@@ -6,11 +6,11 @@
     <div class="pb-1"><strong>Titolo originale: </strong>{{detailsMovie.original_title}}</div>
     <div class="pb-1">
         <strong>Voto: </strong>
-        <font-awesome-icon icon="fa-solid fa-star" class="star" v-if="(detailsMovie.vote_average / 2 > 0 || detailsMovie.vote_average == '')"/>
-        <font-awesome-icon icon="fa-solid fa-star" class="star" v-if="(detailsMovie.vote_average / 2 > 1)"/>
-        <font-awesome-icon icon="fa-solid fa-star" class="star" v-if="(detailsMovie.vote_average / 2 > 2)"/>
-        <font-awesome-icon icon="fa-solid fa-star" class="star" v-if="(detailsMovie.vote_average / 2 > 3)"/>
-        <font-awesome-icon icon="fa-solid fa-star" class="star" v-if="(detailsMovie.vote_average / 2 > 4)"/>
+        <font-awesome-icon icon="fa-solid fa-star" v-bind:class="(detailsMovie.vote_average / 2 > 0 || detailsMovie.vote_average == '')?'star':'star-empty'"/>
+        <font-awesome-icon icon="fa-solid fa-star" v-bind:class="(detailsMovie.vote_average / 2 > 1 )?'star':'star-empty'"/>
+        <font-awesome-icon icon="fa-solid fa-star" v-bind:class="(detailsMovie.vote_average / 2 > 2 )?'star':'star-empty'"/>
+        <font-awesome-icon icon="fa-solid fa-star" v-bind:class="(detailsMovie.vote_average / 2 > 3 )?'star':'star-empty'"/>
+        <font-awesome-icon icon="fa-solid fa-star" v-bind:class="(detailsMovie.vote_average / 2 > 4 )?'star':'star-empty'"/>
     </div>
     <div><strong>Lingua Originale: </strong>{{flagFunction()}}</div>
   </div>
@@ -51,5 +51,8 @@ export default {
     }
     .star{
         color: yellow;
+    }
+    .star-empty{
+        color: lightgrey;
     }
 </style>
