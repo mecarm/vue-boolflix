@@ -19,7 +19,7 @@
                 <font-awesome-icon icon="fa-solid fa-star"
                     v-bind:class="(detailsMovie.vote_average / 2 > 4 )?'star':'star-empty'" />
             </div>
-            <div class="pb-1"><strong>Lingua Originale: </strong>{{flagFunction()}}</div>
+            <div class="pb-1"><strong>Lingua Originale:  </strong><img class="flag" :src="flagFunction()" alt=""></div>
             <div><strong>Data di rilascio: </strong>{{detailsMovie.release_date}}</div>
             <!-- <div>{{functionComputed(detailsMovie.id)}}</div> -->
         </div>
@@ -48,14 +48,14 @@ export default {
 
     methods: {
         flagFunction(){
-            if ( this.detailsMovie.original_language == 'it' ){
-                return this.flag = '🇮🇹'
+            if ( this.detailsMovie.original_language == 'en' ){
+                return "https://www.countryflagicons.com/SHINY/64/GB.png"
             }
-            else if( this.detailsMovie.original_language == 'en' ){
-                return this.flag = '🇬🇧'
+            else if( this.detailsMovie.original_language == 'ja' ){
+                return "https://www.countryflagicons.com/SHINY/64/JP.png"
             }
             else{
-                return this.flag = this.detailsMovie.original_language
+                return 'https://www.countryflagicons.com/SHINY/64/'+ this.detailsMovie.original_language.toUpperCase() +'.png'
             }
         },
         // functionComputed(param) {
@@ -93,12 +93,16 @@ div {
     color: lightgrey;
 }
 
+.flag{
+    width: 20px;
+    height: 20px;
+}
 .col-md-2, .col-sm-6 {
 
     &:hover {
         border: 1px solid rgba(211, 211, 211, 0.187);
 
-        img {
+        .img-fluid {
             display: none;
         }
 

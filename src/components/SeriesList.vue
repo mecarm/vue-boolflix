@@ -19,7 +19,7 @@
                 <font-awesome-icon icon="fa-solid fa-star"
                     :class="(detailsSeries.vote_average / 2 > 4 )?'star':'star-empty'" />
             </div>
-            <div><strong>Lingua Originale: </strong>{{flagFunction()}}</div>
+            <div><strong>Lingua Originale:  </strong><img class="flag" :src="flagFunction()" alt=""></div>
             <div><strong>Data di rilascio: </strong>{{detailsSeries.release_date}}</div>
         </div>
     </div>
@@ -38,19 +38,19 @@
           }
       },
       methods: {
-          flagFunction(){
-              if ( this.detailsSeries.original_language == 'it' ){
-                  return this.flag = '🇮🇹'
-              }
-              else if( this.detailsSeries.original_language == 'en' ){
-                  return this.flag = '🇬🇧'
-              }
-              else{
-                  return this.flag = this.detailsSeries.original_language
-              }
-          }
+        flagFunction(){
+            if ( this.detailsSeries.original_language == 'en' ){
+                return "https://www.countryflagicons.com/SHINY/64/GB.png"
+            }
+            else if( this.detailsSeries.original_language == 'ja' ){
+                return "https://www.countryflagicons.com/SHINY/64/JP.png"
+            }
+            else{
+                return 'https://www.countryflagicons.com/SHINY/64/'+ this.detailsSeries.original_language.toUpperCase() +'.png'
+            }
       }
   }
+}
   </script>
   
 <style lang="scss" scoped>
@@ -68,12 +68,17 @@ div {
     color: lightgrey;
 }
 
+.flag{
+    width: 20px;
+    height: 20px;
+}
+
 .col-md-2, .col-sm-6 {
 
     &:hover {
         border: 1px solid rgba(211, 211, 211, 0.187);
 
-        img {
+        .img-fluid {
             display: none;
         }
 
