@@ -21,7 +21,9 @@
             </div>
             <div class="pb-1"><strong>Lingua Originale:  </strong><img class="flag" :src="flagFunction()" alt=""></div>
             <div><strong>Data di rilascio: </strong>{{detailsMovie.release_date}}</div>
-            <div>{{functionComputed((detailsMovie.id))}}</div>
+            <div> <strong>Attori principali: </strong>
+                <span v-for="element in arrayActors" :key="element">{{element}}, </span>
+            </div>
         </div>
 
     </div>
@@ -37,9 +39,11 @@ export default {
     },
     data(){
         return{
-            arrayActors: [],
-            actor: []
+            arrayActors: '',
         }
+    },
+    mounted(){
+        this.functionComputed(this.detailsMovie.id)
     },
     methods: {
         flagFunction(){
@@ -55,32 +59,15 @@ export default {
         },
         functionComputed(param) {
             
-            axios.get('https://api.themoviedb.org/3/movie/'+param+'/credits?api_key=376598589f212a721599521e853baab1&language=it-IT#')
-                .then((response)=>{
-                    for ( let i = 0; i < 5; i++){
-                        this.arrayActors = response.data.cast[i].name;
-                        console.log(this.arrayActors)
+            axios.get('https://api.themoviedb.org/3/movie/' + param + '/credits?api_key=376598589f212a721599521e853baab1&language=it-IT#')
+                .then((response) => {
+                    this.arrayActors = []
+                    for (let i = 0; i < 5; i++) {
+                        this.arrayActors.push(response.data.cast[i].name)
                     }
-                    
-                })
-                // for( let i = 0; i < 5; i++){
-                //     // this.actor.push
-                //     console.log(this.arrayActors[i].original_name)
-                // }
-                // console.log(this.actor)
-                // this.actor = this.arrayActors.slice(0, 5)
-                // console.log(this.actor)
-
-            // ciclo for per estrarre i primi 5 nomi degli attori
-            
+                    console.log(this.arrayActors)
+                }) 
         },
-        // functionNameActor() {
-        //     for (let i = 0; i < 5; i++) {
-        //         // this.actor.push
-        //         console.log(this.arrayActors[i].original_name)
-        //     }
-        // }
-    
 }
 }
 </script>
