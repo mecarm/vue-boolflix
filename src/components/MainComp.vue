@@ -1,6 +1,8 @@
 <template>
   <main class="row overflow-auto p-5">
+    <!-- Importo componente movies con ciclo -->
     <MoviesList  v-for="(element, index) in moviesUtente[0].movie[0]" :key="index" :detailsMovie="element"/>
+    <!-- Importo componente series con ciclo -->
     <SeriesList  v-for="(element, index) in moviesUtente[1].series[0]" :key="index" :detailsSeries="element"/>
   </main>
 </template>
